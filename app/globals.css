@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f7fb;
+  --foreground: #0f172a;
 }
 
 @theme inline {
@@ -12,15 +12,48 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+.leaflet-container {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+.leaflet-crosshair {
+  cursor: crosshair;
+}
+
+.route-marker {
+  background: transparent;
+  border: 0;
+}
+
+.route-marker span {
+  align-items: center;
+  border: 2px solid #ffffff;
+  border-radius: 9999px 9999px 9999px 0;
+  box-shadow: 0 10px 22px rgb(15 23 42 / 0.28);
+  color: #ffffff;
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: 800;
+  height: 2rem;
+  justify-content: center;
+  letter-spacing: 0;
+  line-height: 1;
+  text-shadow: 0 1px 2px rgb(15 23 42 / 0.35);
+  transform: rotate(-45deg);
+  user-select: none;
+  width: 2rem;
+}
+
+.route-marker b {
+  transform: rotate(45deg);
 }
